@@ -1,7 +1,7 @@
 import AssessmentSchedule from "../components/AssessmentSchedule";
 import React from "react";
 import { MyContext } from "../components/context";
-import Loading from "../components/loading";
+import Loading from "../components/Loading";
 import { navigate } from "gatsby";
 import { Button, useColorMode } from "@chakra-ui/react";
 import { useSpring, animated } from "react-spring";
