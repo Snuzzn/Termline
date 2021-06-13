@@ -37,6 +37,8 @@ import contextClick from "../sounds/contextClick.mp3";
 import switchClick from "../sounds/switchClick.mp3";
 import crumple from "../sounds/crumple.mp3";
 import crispClick from "../sounds/crispClick.mp3";
+import checkOn from "../sounds/checkOn.mp3";
+import checkOff from "../sounds/checkOff.mp3";
 import { GiStarShuriken, GiNorthStarShuriken } from "react-icons/gi";
 import EditOneDialog from "./EditOneDialog";
 import AddOneDialog from "./AddOneDialog";
@@ -52,10 +54,13 @@ export default function AssessmentSchedule() {
   const { scheduleData, setScheduleData, courses, title, startDate } =
     React.useContext(MyContext);
 
+  const [playCheckOn] = useSound(checkOn);
+  const [playCheckOff] = useSound(checkOff);
   const addCellToEdit = (info, index) => {
     if (cellsToEdit.some((cell) => cell.index == index)) {
       const newList = cellsToEdit.filter((cell) => cell.index != index);
       setCellsToEdit(newList);
+      playCheckOff();
     } else {
       let newList = [...cellsToEdit];
       info.forEach((item) => {
@@ -63,6 +68,7 @@ export default function AssessmentSchedule() {
         newList.push({ index: index, text: text, code: code });
       });
       setCellsToEdit(newList);
+      playCheckOn();
     }
   };
   const finishChanges = () => {
@@ -163,6 +169,7 @@ export default function AssessmentSchedule() {
     toggleColorMode();
     playToggle();
   };
+
   return (
     <Center>
       <Box w="80%" mt="5em" mb="5em">
