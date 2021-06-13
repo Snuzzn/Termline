@@ -33,6 +33,7 @@ import { GiConsoleController } from "react-icons/gi";
 import { FiChevronDown } from "react-icons/fi";
 import { navigate } from "gatsby";
 import { useSpring, animated } from "react-spring";
+
 export default function Wizard() {
   const {
     courses,
@@ -99,12 +100,12 @@ export default function Wizard() {
       {value}
     </Button>
   ));
-  //   console.log(startDate.toString());
   const props = useSpring({
     to: { opacity: 1 },
     from: { opacity: 0 },
     delay: 500,
   });
+
   return (
     <animated.div style={props}>
       <main>
@@ -200,7 +201,9 @@ export default function Wizard() {
               </Text>
               <DatePicker
                 selected={startDate}
-                onChange={(date) => setStartDate(date)}
+                onChange={(date) => {
+                  setStartDate(new Date(date.setHours(0, 0, 0, 0)));
+                }}
                 customInput={<ExampleCustomInput />}
               />
             </FormControl>
