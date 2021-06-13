@@ -13,6 +13,7 @@ import React from "react";
 import { MyContext } from "./context";
 import crumple from "../sounds/crumple.mp3";
 import useSound from "use-sound";
+import editClick from "../sounds/editClick.mp3";
 
 var _ = require("lodash");
 
@@ -22,6 +23,7 @@ export default function EditableTask({ text, code, cells }) {
   const [prev, setPrev] = React.useState(text);
 
   const [playCrumple] = useSound(crumple);
+  const [playEditClick] = useSound(editClick);
 
   const handleEdit = () => {
     let copy = scheduleData.map((inner) => inner.slice());
@@ -37,6 +39,7 @@ export default function EditableTask({ text, code, cells }) {
       }
       setScheduleData(copy);
     });
+    playEditClick();
     localStorage.setItem("scheduleData", JSON.stringify(scheduleData));
   };
   const handleDelete = () => {

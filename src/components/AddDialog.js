@@ -10,6 +10,7 @@ import { uniq } from "lodash";
 import useSound from "use-sound";
 import crispClick from "../sounds/crispClick.mp3";
 import plup from "../sounds/plup.mp3";
+import checkOff from "../sounds/checkOff.mp3";
 var _ = require("lodash");
 
 export default function AddDialog({ cells, setCellsToEdit }) {
@@ -51,10 +52,11 @@ export default function AddDialog({ cells, setCellsToEdit }) {
     closeModal();
     playPlup();
   };
-
+  const [playCheckOff] = useSound(checkOff);
   const closeModal = () => {
     setCellsToEdit([]);
     onClose();
+    playCheckOff();
   };
 
   return (

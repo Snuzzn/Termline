@@ -24,6 +24,8 @@ import EditableTask from "./EditableTask";
 import React from "react";
 import { MyContext } from "./context";
 import { uniq } from "lodash";
+import useSound from "use-sound";
+import editClick from "../sounds/editClick.mp3";
 var _ = require("lodash");
 
 export default function EditOneDialog({ isOpen, setIsOpen, index, task }) {
@@ -38,6 +40,8 @@ export default function EditOneDialog({ isOpen, setIsOpen, index, task }) {
   const [taskValue, setTaskValue] = React.useState(task.text);
   const [value, setValue] = React.useState(task.code);
   const [link, setLink] = React.useState(task.link ? task.link : "");
+
+  const [playEditClick] = useSound(editClick);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -54,6 +58,7 @@ export default function EditOneDialog({ isOpen, setIsOpen, index, task }) {
     setScheduleData(copy);
     localStorage.setItem("scheduleData", JSON.stringify(scheduleData));
     closeModal();
+    playEditClick();
   };
 
   const initialFoc = React.useRef();

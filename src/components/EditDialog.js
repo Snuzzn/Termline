@@ -33,6 +33,7 @@ import { MyContext } from "./context";
 import { uniq } from "lodash";
 import useSound from "use-sound";
 import crispClick from "../sounds/crispClick.mp3";
+import checkOff from "../sounds/checkOff.mp3";
 var _ = require("lodash");
 
 export default function EditDialog({ cells, setCellsToEdit }) {
@@ -43,10 +44,11 @@ export default function EditDialog({ cells, setCellsToEdit }) {
   });
   let unique = [..._.uniqWith(listWithoutIndex, _.isEqual)];
   unique = unique.filter((element) => element.text != undefined);
-
+  const [playCheckOff] = useSound(checkOff);
   const closeModal = () => {
     setCellsToEdit([]);
     onClose();
+    playCheckOff();
   };
 
   const [playCrispClick] = useSound(crispClick);
