@@ -36,7 +36,7 @@ import bubbleClick from "../sounds/bubbleClick.mp3";
 import contextClick from "../sounds/contextClick.mp3";
 import switchClick from "../sounds/switchClick.mp3";
 import crumple from "../sounds/crumple.mp3";
-import plup from "../sounds/plup.mp3";
+import crispClick from "../sounds/crispClick.mp3";
 import { GiStarShuriken, GiNorthStarShuriken } from "react-icons/gi";
 import EditOneDialog from "./EditOneDialog";
 import AddOneDialog from "./AddOneDialog";
@@ -104,14 +104,14 @@ export default function AssessmentSchedule() {
 
   const { show } = useContextMenu();
 
-  const [playPlup] = useSound(plup);
+  const [playCrispClick] = useSound(crispClick);
 
   const [isEditOne, setIsEditOne] = React.useState(false);
   const [editIndex, setEditIndex] = React.useState("");
   const [editTask, setEditTask] = React.useState({});
   function handleEditOne({ props }) {
     const [index, task] = props;
-    playPlup();
+    playCrispClick();
     setIsEditOne(true);
     setEditIndex(index);
     setEditTask(task);
@@ -146,7 +146,7 @@ export default function AssessmentSchedule() {
   const [addIndex, setAddIndex] = React.useState("");
   function handleAddOne({ props }) {
     const [index] = props;
-    playPlup();
+    playCrispClick();
 
     setIsAddOne(true);
     setAddIndex(index);

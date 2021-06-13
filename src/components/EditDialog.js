@@ -31,6 +31,8 @@ import EditableTask from "./EditableTask";
 import React from "react";
 import { MyContext } from "./context";
 import { uniq } from "lodash";
+import useSound from "use-sound";
+import crispClick from "../sounds/crispClick.mp3";
 var _ = require("lodash");
 
 export default function EditDialog({ cells, setCellsToEdit }) {
@@ -41,15 +43,24 @@ export default function EditDialog({ cells, setCellsToEdit }) {
   });
   let unique = [..._.uniqWith(listWithoutIndex, _.isEqual)];
   unique = unique.filter((element) => element.text != undefined);
-  console.log(unique);
 
   const closeModal = () => {
     setCellsToEdit([]);
     onClose();
   };
+
+  const [playCrispClick] = useSound(crispClick);
+
   return (
     <>
-      <Button mr="-px" onClick={onOpen} size="sm">
+      <Button
+        mr="-px"
+        onClick={() => {
+          onOpen();
+          playCrispClick();
+        }}
+        size="sm"
+      >
         Edit
       </Button>
       <Modal size="md" isOpen={isOpen} onClose={closeModal}>

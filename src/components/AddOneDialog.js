@@ -22,6 +22,8 @@ import { MyContext } from "./context";
 import AddModal from "./AddModal";
 import { Item } from "react-contexify";
 import { uniq } from "lodash";
+import plup from "../sounds/plup.mp3";
+import useSound from "use-sound";
 
 var _ = require("lodash");
 
@@ -35,6 +37,8 @@ export default function AddOneDialog({ index, isOpen, setIsOpen }) {
   const { scheduleData, setScheduleData, courses } =
     React.useContext(MyContext);
 
+  const [playPlup] = useSound(plup);
+
   const addTask = (e) => {
     e.preventDefault();
     let copy = scheduleData.map((inner) => inner.slice());
@@ -42,10 +46,10 @@ export default function AddOneDialog({ index, isOpen, setIsOpen }) {
     if (link != "") copy[x][y].push({ text: task, code: value, link: link });
     else copy[x][y].push({ text: task, code: value });
     setScheduleData(copy);
-
     localStorage.setItem("scheduleData", JSON.stringify(scheduleData));
     setTask("");
     closeModal();
+    playPlup();
   };
 
   const closeModal = () => {

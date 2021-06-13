@@ -11,12 +11,18 @@ import { MdEdit, MdDelete } from "react-icons/md";
 import Entry from "./Entry";
 import React from "react";
 import { MyContext } from "./context";
+import crumple from "../sounds/crumple.mp3";
+import useSound from "use-sound";
+
 var _ = require("lodash");
 
 export default function EditableTask({ text, code, cells }) {
   const { scheduleData, setScheduleData } = React.useContext(MyContext);
   const [value, setValue] = React.useState(text);
   const [prev, setPrev] = React.useState(text);
+
+  const [playCrumple] = useSound(crumple);
+
   const handleEdit = () => {
     let copy = scheduleData.map((inner) => inner.slice());
     cells.forEach((cell) => {
@@ -51,21 +57,13 @@ export default function EditableTask({ text, code, cells }) {
     setScheduleData(copy);
     localStorage.setItem("scheduleData", JSON.stringify(scheduleData));
 
-    //     cells.forEach((element, index) => {
-    //       if (
-    //         (element.text === text && element.code === code) ||
-    //         element.text == undefined
-    //       ) {
-    //         cells.splice(index, 1);
-    //       }
-    //     });
     var removed = _.remove(cells, function (element) {
       return (
         (element.text === text && element.code === code) ||
         element.text == undefined
       );
     });
-    //     setDeleted(true);
+    playCrumple();
   };
 
   const handleChange = (event) => setValue(event);

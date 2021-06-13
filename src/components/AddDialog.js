@@ -7,6 +7,9 @@ import React from "react";
 import { MyContext } from "./context";
 import AddModal from "./AddModal";
 import { uniq } from "lodash";
+import useSound from "use-sound";
+import crispClick from "../sounds/crispClick.mp3";
+import plup from "../sounds/plup.mp3";
 var _ = require("lodash");
 
 export default function AddDialog({ cells, setCellsToEdit }) {
@@ -18,6 +21,8 @@ export default function AddDialog({ cells, setCellsToEdit }) {
   const { scheduleData, setScheduleData, courses } =
     React.useContext(MyContext);
 
+  const [playPlup] = useSound(plup);
+  const [playCrispClick] = useSound(crispClick);
   const addTask = (e) => {
     e.preventDefault();
     let copy = scheduleData.map((inner) => inner.slice());
@@ -44,6 +49,7 @@ export default function AddDialog({ cells, setCellsToEdit }) {
     localStorage.setItem("scheduleData", JSON.stringify(scheduleData));
     setTask("");
     closeModal();
+    playPlup();
   };
 
   const closeModal = () => {
@@ -53,7 +59,14 @@ export default function AddDialog({ cells, setCellsToEdit }) {
 
   return (
     <>
-      <IconButton onClick={onOpen} icon={<MdAdd />} size="sm">
+      <IconButton
+        onClick={() => {
+          onOpen();
+          playCrispClick();
+        }}
+        icon={<MdAdd />}
+        size="sm"
+      >
         Add
       </IconButton>
       <AddModal
