@@ -15,7 +15,9 @@ export default function Entry({ text, color, link }) {
         key="sm"
         variant="solid"
         colorScheme={color}
-        _hover={{ filter: "brightness(110%)" }}
+        _hover={{
+          filter: link && "brightness(120%)",
+        }}
         onMouseEnter={() => {
           if (link) {
             play();
