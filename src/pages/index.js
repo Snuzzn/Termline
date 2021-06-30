@@ -5,6 +5,8 @@ import Loading from "../components/Loading";
 import { navigate } from "gatsby";
 import { Button, useColorMode } from "@chakra-ui/react";
 import { useSpring, animated } from "react-spring";
+import favicon from "../images/favicon.ico";
+import Helmet from "react-helmet";
 
 export default function Home() {
   const { setScheduleData, setCourses, setTitle, setStartDate } =
@@ -29,6 +31,11 @@ export default function Home() {
   });
   return (
     <main>
+      <Helmet>
+        <link rel="icon" href={favicon} />
+        <title>Termline</title>
+        <meta name="description" content="An intuitive assessment scheduler" />
+      </Helmet>
       {loading ? (
         <Loading loading={loading} />
       ) : (
