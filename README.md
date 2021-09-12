@@ -1,7 +1,9 @@
 # Termline
+https://termline.gatsbyjs.io/
+
 In university, it can be challenging to keep track of the many assessables tasks (some recurring, some stand-alone) that are due throughout the term. Using a general-purpose calendar application is usually inadequate as they are bloated with all your other tasks such as classes, co-corricular events and general events outside of uni. 
 
-Termline is a scheduler organised by term weeks, that's designed to keep track of assessment due dates so you can effectively plan and prepare for them. It's clutter-free as only assessable tasks should be displayed and not everything else. This gives you a rough idea of how many days are in between the due dates so that you can organise and prioritise your preparation accordingly. If you are in the habit of checking the schedule regularly (via the web or taking a screenshot and printing it out), you'll never be blindsided by an assessment. 
+Termline is a **scheduler** organised by term weeks, that's designed to keep track of **assessment due dates** so you can effectively plan and prepare for them. It's **clutter-free** as only assessable tasks should be displayed and not everything else. This gives you a rough idea of how many days are in between the due dates so that you can organise and prioritise your preparation accordingly. If you are in the habit of checking the schedule regularly (via the web or taking a screenshot and printing it out), you'll never be blindsided by an assessment. 
 
 ## Guide
 
@@ -12,14 +14,6 @@ If the course administator changes the due dates throughout the term, it is easy
 
 ## Demo
 ![image](https://user-images.githubusercontent.com/68191852/132986889-ffceec0a-12ac-4b8e-869d-501d5a4bbfe7.png)
-https://vimeo.com/manage/videos/602917281
-
-
-# Link
-Live at https://termline.gatsbyjs.io/
-
-
-
 
 
 
