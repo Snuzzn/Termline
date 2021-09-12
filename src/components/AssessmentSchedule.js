@@ -291,7 +291,7 @@ export default function AssessmentSchedule() {
                       highlight
                     }
                   >
-                    <Flex>
+                    <Flex direction="column">
                       {/* {!edit &&
                         todayRow == scheduleData.indexOf(row) &&
                         todayColumn == row.indexOf(cell) && (
