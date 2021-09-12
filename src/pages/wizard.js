@@ -33,6 +33,7 @@ import { GiConsoleController } from "react-icons/gi";
 import { FiChevronDown } from "react-icons/fi";
 import { navigate } from "gatsby";
 import { useSpring, animated } from "react-spring";
+import ReactPlayer from "react-player";
 
 export default function Wizard() {
   const {
@@ -214,6 +215,22 @@ export default function Wizard() {
                 Done
               </Button>
             </Flex>
+            <div
+              style={{
+                position: "relative",
+                marginTop: "3em",
+                paddingTop: "56.25%",
+              }}
+            >
+              <ReactPlayer
+                controls={true}
+                width="100%"
+                height="100%"
+                style={{ position: "absolute", top: 0, left: 0 }}
+                url="https://vimeo.com/602917281"
+                fallback="../public/thumbnail.png"
+              />
+            </div>
           </Box>
         </Flex>
       </main>
