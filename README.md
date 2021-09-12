@@ -11,9 +11,11 @@ There are two methods of adding tasks. If you want to add a stand-alone task (e.
 If the course administator changes the due dates throughout the term, it is easy to edit the scheduler using similar steps described earlier for 'add', except this time choosing 'edit'.
 
 ## Demo
+![image](https://user-images.githubusercontent.com/68191852/132986889-ffceec0a-12ac-4b8e-869d-501d5a4bbfe7.png)
 https://vimeo.com/manage/videos/602917281
 
 
+# Link
 Live at https://termline.gatsbyjs.io/
 
 
