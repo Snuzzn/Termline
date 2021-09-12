@@ -1,54 +1,24 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby minimal starter
-</h1>
+# Termline
+In university, it can be challenging to keep track of the many assessables tasks (some recurring, some stand-alone) that are due throughout the term. Using a general-purpose calendar application is usually inadequate as they are bloated with all your other tasks such as classes, co-corricular events and general events outside of uni. 
 
-## 🚀 Quick start
+Termline is a scheduler organised by term weeks, that's designed to keep track of assessment due dates so you can effectively plan and prepare for them. It's clutter-free as only assessable tasks should be displayed and not everything else. This gives you a rough idea of how many days are in between the due dates so that you can organise and prioritise your preparation accordingly. If you are in the habit of checking the schedule regularly (via the web or taking a screenshot and printing it out), you'll never be blindsided by an assessment. 
 
-1.  **Create a Gatsby site.**
+## Guide
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+To set up your schedule, you simply enter the courses that you're doing for a particular term and provide the term's start date so that it can display the current day. Each course is colour-coded to provide clarity. 
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+There are two methods of adding tasks. If you want to add a stand-alone task (e..g. assessment 1 due Week 5 Monday 2pm), you can simply right click on the appropriate cell and click 'Add'. Alterantively, you can click the 'Make Changes' icon at the top of the schedule and multi-select the checkboxes to add multipe identical tasks (e.g. a lab task due at 5pm each Sunday). 
+If the course administator changes the due dates throughout the term, it is easy to edit the scheduler using similar steps described earlier for 'add', except this time choosing 'edit'.
 
-2.  **Start developing.**
+## Demo
+https://vimeo.com/manage/videos/602917281
 
-    Navigate into your new site’s directory and start it up.
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+Live at https://termline.gatsbyjs.io/
 
-3.  **Open the code and start customizing!**
 
-    Your site is now running at http://localhost:8000!
 
-    Edit `src/pages/index.js` to see your site update in real-time!
 
-4.  **Learn more**
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
 
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
 
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
